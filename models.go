@@ -1,4 +1,4 @@
-package gopgsyncmodel
+package gopgsyncmodels
 
 import (
 	"container/list"

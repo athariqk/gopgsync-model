@@ -36,12 +36,12 @@ type ReplicationMessageFlag uint8
 
 const (
 	FULL_REPLICATION ReplicationMessageFlag = iota
-	COMMIT
+	STREAM_REPLICATION
 )
 
 type ReplicationMessage struct {
-	TxFlag   ReplicationMessageFlag
-	Commands []*DmlCommand
+	ReplicationFlag ReplicationMessageFlag
+	Command         *DmlCommand
 }
 
 // Flattens field map into basic column names (<table>.<field>) with plain field values

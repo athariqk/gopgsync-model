@@ -1,4 +1,4 @@
-package gopgsyncmodel
+package pgcdcmodels
 
 import (
 	"container/list"

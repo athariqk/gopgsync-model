@@ -1,3 +1,3 @@
-module github.com/athariqk/gopgsync-models
+module github.com/athariqk/pgcdc-models
 
 go 1.21.6

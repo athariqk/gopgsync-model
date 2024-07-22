@@ -44,7 +44,7 @@ type ReplicationMessage struct {
 	Command         *DmlCommand
 }
 
-// Flattens field map into basic column names (<table>.<field>) with plain field values
+// Flattens field map into basic column names (<namespace>.<table>.<field>) with plain field values
 func Flatten(columns map[string]Field, onlyKey bool) map[string]interface{} {
 	row := map[string]interface{}{}
 	for name, field := range columns {
@@ -52,8 +52,8 @@ func Flatten(columns map[string]Field, onlyKey bool) map[string]interface{} {
 			continue
 		}
 		splits := strings.Split(name, ".")
-		if len(splits) == 2 {
-			name = splits[1]
+		if len(splits) == 3 {
+			name = splits[2]
 		}
 		row[name] = field.Content
 	}

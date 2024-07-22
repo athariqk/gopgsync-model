@@ -12,8 +12,9 @@ type Field struct {
 	DataTypeOID uint32
 }
 
-type DmlData struct {
-	TableName string
+type Row struct {
+	Namespace string
+	RelName   string
 	// NOTE: all field names MUST BE a fully qualified name!
 	Fields map[string]Field
 }
@@ -27,7 +28,7 @@ const (
 )
 
 type DmlCommand struct {
-	Data    DmlData
+	Data    Row
 	CmdType SQLCommandType
 }
 

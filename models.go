@@ -35,7 +35,9 @@ type DmlCommand struct {
 type ReplicationMessageFlag uint8
 
 const (
-	FULL_REPLICATION ReplicationMessageFlag = iota
+	FULL_REPLICATION_PROGRESS ReplicationMessageFlag = iota
+	FULL_REPLICATION_NEW_ROWS
+	FULL_REPLICATION_FINISHED
 	STREAM_REPLICATION
 )
 

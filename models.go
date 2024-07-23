@@ -44,7 +44,7 @@ const (
 type ReplicationMessage struct {
 	ReplicationFlag ReplicationMessageFlag
 	Command         *DmlCommand
-	Total           uint32
+	Total           int
 }
 
 // Flattens field map into basic column names (<namespace>.<table>.<field>) with plain field values
